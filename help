@@ -11,3 +11,6 @@ git push -u origin main
 git remote add origin https://github.com/touhidbd9952/payment_gateway.git
 git branch -M main
 git push -u origin main
+
+git show-ref
+push origin HEAD:master
