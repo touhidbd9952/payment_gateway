@@ -40,9 +40,9 @@
 
                     @csrf
 
-                    <input type="hidden" name="access_key" value="d2dfc86dac5b34879bc1bded430c125e">
+                    <input type="hidden" name="access_key" value="<?php echo env('UCB_access_key')?>">
                     <!--production value will be different-->
-                    <input type="hidden" name="profile_id" value="21F5070B-E428-496C-9138-9A00FD76E9E0">
+                    <input type="hidden" name="profile_id" value="<?php echo env('UCB_profile_id') ?>">
                     <!--production value will be different-->
 
                     <input type="hidden" name="transaction_uuid" value="<?php echo uniqid(); ?>">
