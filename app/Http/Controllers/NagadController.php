@@ -83,7 +83,6 @@ class NagadController{
             'challenge' => NagadUtility::generateRandomString(),
         ];
         
-        
 
         $PostData = array(
             'accountNumber' => config('nagad.merchant_number'), //optional
@@ -93,8 +92,8 @@ class NagadController{
         );
        
 
-        $ur = $this->nagadHost."api/dfs/check-out/initialize/" . $MerchantID . "/" . $invoice_no;  
-        $Result_Data = NagadUtility::HttpPostMethod($ur,$PostData);
+        $ur = $this->nagadHost."api/dfs/check-out/initialize/" . $MerchantID . "/" . $invoice_no;    
+        $Result_Data = NagadUtility::HttpPostMethod($ur,$PostData);  //dd($Result_Data);  
          
         if (isset($Result_Data['sensitiveData']) && isset($Result_Data['signature'])) {
             if ($Result_Data['sensitiveData'] != "" && $Result_Data['signature'] != "") {
@@ -113,7 +112,7 @@ class NagadController{
                         'amount' => 10.7,                //<==== cart total amount
                         'challenge' => $randomserver
                     );
-                    
+                   
 
                     // $merchantAdditionalInfo = '{"no_of_seat": "1", "Service_Charge":"20"}';
                     if($this->tnx !== ''){
@@ -131,12 +130,12 @@ class NagadController{
 
                     // echo json_encode($PostDataOrder);
                     // exit();
-
-                    $OrderSubmitUrl = $this->nagadHost."api/dfs/check-out/complete/" . $paymentReferenceId;  
-                    $Result_Data_Order = NagadUtility::HttpPostMethod($OrderSubmitUrl, $PostDataOrder);   
+                    
+                    $OrderSubmitUrl = $this->nagadHost."api/dfs/check-out/complete/" . $paymentReferenceId;
+                    $Result_Data_Order = NagadUtility::HttpPostMethod($OrderSubmitUrl, $PostDataOrder);    
                     try {
                         if ($Result_Data_Order['status'] == "Success") {
-                            $url = ($Result_Data_Order['callBackUrl']);
+                            $url = ($Result_Data_Order['callBackUrl']);  
                             return redirect($url);
                             //echo "<script>window.open('$url', '_self')</script>";
                         }
@@ -156,15 +155,15 @@ class NagadController{
     }
 
     public function verify(Request $request)
-    {
+    { 
         //$Query_String = explode("&", explode("?", $_SERVER['REQUEST_URI'])[1]);
         //$payment_ref_id = substr($Query_String[2], 15);  
 
         //$payment_ref_id = time() . '-' . Auth::user()->id;    //time+order id
         $payment_ref_id = time() . '-' . rand(0,10);   //for testing purpose
 
-        $url = $this->nagadHost."api/dfs/verify/payment/" . $payment_ref_id;
-        $json = NagadUtility::HttpGet($url);
+        $url = $this->nagadHost."api/dfs/verify/payment/" . $payment_ref_id;  
+        $json = NagadUtility::HttpGet($url);    
         if(json_decode($json)->status == 'Success'){
             /*$payment_type = Session::get('payment_type');
             if ($payment_type == 'cart_payment') {

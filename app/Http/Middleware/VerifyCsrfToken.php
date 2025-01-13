@@ -13,5 +13,6 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         '/',
+        'https://paperlessltd.com/paymenttest/ucb/ucb_payment_receipt',
     ];
 }

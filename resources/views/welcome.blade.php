@@ -47,6 +47,15 @@
                         <a href="{{ route('dbbl_payment') }}" class="btn btn-info text-light font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
                             Dbbl
                         </a>
+
+                        <a href="{{ route('ucb_payment') }}" class="btn btn-info text-light font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
+                            UCB
+                        </a>
+
+                        <a href="{{ route('southeast_payment') }}" class="btn btn-info text-light font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
+                            Southeast
+                        </a>
+
                         {{-- <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
 
                         @if (Route::has('register'))
