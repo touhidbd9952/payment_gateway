@@ -17,7 +17,7 @@
             <div class="col-sm-12">
                 <h3>UCB Secure Acceptance - Payment Form</h3>
 
-                <form id="payment_confirmation" action="https://testsecureacceptance.cybersource.com/pay" method="post" >
+                <form id="payment_confirmation" action="<?php echo env('UCB_gatewayUrl')?>" method="post" >
                 <!-- production URL will be changed-->
 
                 <fieldset id="confirmation">
