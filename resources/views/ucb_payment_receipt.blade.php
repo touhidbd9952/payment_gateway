@@ -69,9 +69,10 @@
     font-size:14px;
   }
   @keyframes animateIcon{
-    0% { @include scaleTransistion(1)}
-    50% { @include scaleTransistion(2);  }
-    100% { @include scaleTransistion(1)}
+    0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
   }
 }
       </style>
