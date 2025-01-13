@@ -1,0 +1,30 @@
+
+NAGAD 
+1.	Configuration 	.env 
+2.	Route 	“web.php”
+3.	Controller	NagadController
+4.	View
+
+DBBL 
+1.	Configuration	Storateappdbbl
+2.	Route   “web.php”
+3.	Controller	DBBLPaymentController
+4.	View
+
+UCB
+1.	Configuration	
+a.	Resource/View/ucb_payment_confirmation.blade.php   api connection by form action
+b.	Resource/View/ucb_payment.blade.php   access_key, profile_id  by form input hidden
+c.	Resource/View/inc/ucb_security.blade.php  SECRET_KEY
+2.	Route  	“web.php”
+3.	Controller 	UCBPaymentController.php
+4.	View
+
+Southeast Bank
+1.	Configuration	.env
+2.	Route	“web.php”
+3.	Controller	SoutheastPaymentController
+4.	View
+
+
+
